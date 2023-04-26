@@ -7,24 +7,25 @@
     <link rel="preconnect" href="https://fonts.bunny.net" />
     <link href="https://fonts.bunny.net/css?family=barlow:800|work-sans:400,500" rel="stylesheet" />
     <link rel="stylesheet" href="/style.css" />
-    <title>Tailwind Site</title>
+    <title>Tailwind Agency Site</title>
   </head>
 
   <body class="font-body">
-    <div class="mx-auto mt-7 max-w-xs lg:max-w-6xl">
-      <nav class="flex items-center justify-between">
+    <div class="mx-auto mt-8 px-6 lg:max-w-6xl">
+      <nav class="relative flex items-center justify-between">
         <a href="#">
           <img src="/logo.svg" alt="Logo." />
         </a>
 
-        <div class="cursor-pointer rounded p-[3px] shadow-sm">
+        <div class="relative z-20 cursor-pointer rounded p-[3px] shadow-sm md:hidden" data-menu-btn>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
-            stroke="#A8A29E"
+            stroke="#a8a29e"
             class="h-8 w-8"
+            data-menu-open-btn
           >
             <path
               stroke-linecap="round"
@@ -32,42 +33,414 @@
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
           </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#a8a29e"
+            class="hidden h-8 w-8 stroke-slate-700"
+            data-menu-close-btn
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          class="fixed inset-0 z-10 hidden h-screen w-full bg-slate-900/20 lg:hidden"
+          data-overlay
+        ></div>
+        <div
+          class="absolute top-12 z-20 hidden w-full rounded-xl bg-neutral-50 p-5 text-lg shadow-xl lg:hidden"
+          data-menu
+        >
+          <ul class="space-y-3">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:inline-block">
+          <ul class="flex gap-12 font-medium">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
         </div>
       </nav>
     </div>
 
-    <div class="mt-36 px-7">
-      <h1 class="font-heading text-5xl font-bold leading-tight text-gray-900">
-        Social media posts that get clicks!
-      </h1>
-      <p class="mt-2 text-lg text-gray-800">
-        Driving traffic to your site just got easier. Get compelling SEO blog and social media posts
-        handcrafted with love.
-      </p>
-
-      <a
-        class="mt-8 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-lg font-medium leading-tight transition-colors duration-200 ease-in-out hover:bg-accent-dark"
-      >
-        Book a call
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="2.5"
-          stroke="currentColor"
-          class="h-4 w-4 text-gray-800"
+    <div class="mt-36 px-6 lg:mx-auto lg:flex lg:max-w-6xl">
+      <div>
+        <h1
+          class="font-heading text-5xl font-bold leading-tight text-gray-900 lg:max-w-md lg:text-[4rem]"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-          />
-        </svg>
-      </a>
+          Social media posts that get clicks!
+        </h1>
+        <p class="mt-2 text-lg text-gray-700 lg:max-w-2xl">
+          Driving traffic to your site just got easier. Get compelling SEO blog and social media
+          posts handcrafted with love.
+        </p>
 
-      <div class="mt-4">
-        <img src="/hero-img.png" alt="" />
+        <a
+          class="mt-8 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-accent px-5 py-3 text-lg font-medium leading-tight transition-colors duration-200 ease-in-out hover:bg-accent-dark"
+        >
+          Book a call
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="h-4 w-4 text-gray-800"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <div class="mt-16">
+        <img src="/social-life.svg" alt="Woman holding phone, engaging on social media" />
       </div>
     </div>
+
+    <div class="mt-24 bg-zinc-50 px-6 py-24">
+      <div class="lg:mx-auto lg:max-w-6xl">
+        <div class="mb-16 lg:mb-20">
+          <h2
+            class="text-center font-heading text-4xl font-bold leading-tight text-gray-900 lg:text-[2.6rem]"
+          >
+            How We Can Help You?
+          </h2>
+          <p class="mt-2 text-center text-lg text-gray-700">
+            We create compelling SEO blog post & social media content that drives the right people
+            to your site.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-14 md:flex-nowrap md:justify-center">
+          <div>
+            <img src="/metrics.svg" alt="" width="200" />
+            <h3 class="font-heading text-xl font-bold lg:mt-4 lg:text-[1.7rem]">
+              Tech Optimization
+            </h3>
+            <p class="mt-2 text-lg text-gray-700">
+              A list of technical changes and optimizations that help your site meet the
+              requirements set by search engines like Google.
+            </p>
+          </div>
+
+          <div>
+            <img src="/social-media.svg" alt="" width="200" />
+            <h3 class="font-heading text-xl font-bold lg:mt-4 lg:text-[1.7rem]">Social Media</h3>
+            <p class="mt-2 text-lg text-gray-700">
+              Every story we craft for your social media channels serves a purpose and is planned
+              out to meet your business requirements.
+            </p>
+          </div>
+
+          <div>
+            <img src="/site-content.svg" alt="" width="200" />
+            <h3 class="font-heading text-xl font-bold lg:mt-4 lg:text-[1.7rem]">
+              Content Strategy
+            </h3>
+            <p class="mt-2 text-lg text-gray-700">
+              Our team of content writers and SMEs create compelling content through blog posts to
+              drive Traffic and Conversions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-56 md:mx-auto md:flex md:max-w-6xl md:gap-8 lg:gap-16">
+        <img
+          class="rounded-lg object-cover md:h-full md:max-w-xs lg:max-w-lg"
+          src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?width=1500&optimizer=image"
+          alt=""
+        />
+
+        <div>
+          <h3
+            class="mt-10 font-heading text-[1.75rem] font-bold leading-tight md:mt-0 lg:mt-0 lg:text-4xl"
+          >
+            Need help creating high quality content?
+          </h3>
+          <p class="mt-2 text-lg text-gray-700">
+            We're known for Content Strategy and Content Creation.
+          </p>
+          <p class="mt-2 text-lg text-gray-700">
+            Get super rich content experience in blog & social media post, drive traffic and improve
+            outcomes by as much as 59%. Increase search exposure, build brand awareness and attract
+            top-of-funnel visitors with blog posts created by our in-house team of content
+            marketers.
+          </p>
+          <p class="mt-2 text-lg text-gray-700">
+            We develop engaging, high-quality content that's personalized for your target audience
+            and optimized for search engines.
+          </p>
+          <a
+            class="mt-8 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-neutral-200 px-5 py-3 text-lg font-medium leading-tight transition-colors duration-200 ease-in-out hover:bg-neutral-300"
+          >
+            View testimonials
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              class="h-4 w-4 text-gray-800"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-56 lg:mx-auto lg:max-w-6xl">
+        <h2
+          class="text-center font-heading text-3xl font-bold leading-tight text-gray-900 lg:text-left lg:text-[2.5rem]"
+        >
+          What Our Clients Are Saying
+        </h2>
+
+        <div
+          class="mt-20 flex flex-col items-center gap-14 lg:flex-row lg:items-start lg:justify-center"
+        >
+          <div>
+            <img
+              class="h-28 w-28 rounded-full object-cover"
+              src="https://cdn.popsy.co/images/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F2379004%2Fpexels-photo-2379004.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26h%3D650%26w%3D940?width=1500&optimizer=image"
+              alt=""
+            />
+            <p class="mt-2 font-bold lg:text-lg">Seren Singh</p>
+            <p class="mt-2 text-lg text-gray-700">Founder @Coiny</p>
+            <p class="mt-2 text-lg text-gray-700 lg:max-w-md">
+              Hype excels at creating industry content without needing to rely on our internal
+              expertise. The quality of their work just gets better and better with each new
+              deliverable.
+            </p>
+          </div>
+
+          <div>
+            <img
+              class="h-28 w-28 rounded-full object-cover"
+              src="https://cdn.popsy.co/images/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F1181690%2Fpexels-photo-1181690.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26h%3D650%26w%3D940?width=1500&optimizer=image"
+              alt=""
+            />
+            <p class="mt-2 font-bold lg:text-lg">Adelina Petty</p>
+            <p class="mt-2 text-lg text-gray-700">Founder @Drop</p>
+            <p class="mt-2 text-lg text-gray-700 lg:max-w-md">
+              Hype shows creativity not just in the project, but in the process itself. There is a
+              synergy between our companies that's almost cultural.
+            </p>
+          </div>
+
+          <div>
+            <img
+              class="h-28 w-28 rounded-full object-cover"
+              src="https://cdn.popsy.co/images/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F733872%2Fpexels-photo-733872.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26h%3D650%26w%3D940?width=1500&optimizer=image"
+              alt=""
+            />
+            <p class="mt-2 font-bold lg:text-lg">Jem Davis</p>
+            <p class="mt-2 text-lg text-gray-700">Founder @Excelio</p>
+            <p class="mt-2 text-lg text-gray-700 lg:max-w-md">
+              The Hype team went above and beyond our expectations. They helped us grow our Twitter
+              from 0 to 10k followers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-20 px-6 lg:mx-auto lg:max-w-6xl">
+      <h2 class="font-heading text-3xl font-bold leading-tight text-gray-900 lg:text-[2.6rem]">
+        Plans for every need
+      </h2>
+      <p class="mt-2 text-lg text-gray-700">You can cancel anytime.</p>
+
+      <div class="mt-14 flex flex-col gap-14 lg:flex-row lg:justify-between">
+        <div class="lg:max-w-xs">
+          <h3 class="font-heading text-2xl font-bold text-gray-900 lg:text-3xl">Starter</h3>
+          <p class="mt-2 text-lg text-gray-700">$249/month</p>
+          <a
+            class="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-accent px-5 py-3 text-lg font-medium leading-tight transition-colors duration-200 ease-in-out hover:bg-accent-dark"
+          >
+            Let's talk
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              class="h-4 w-4 text-gray-800"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </a>
+
+          <div class="ml-3 mt-10">
+            <ul class="list-inside list-disc space-y-3 text-lg text-gray-700 lg:list-outside">
+              <li>10 Blog Articles</li>
+              <li>Keyword research</li>
+              <li>700+ words</li>
+              <li>SEO friendly</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:max-w-xs">
+          <h3 class="font-heading text-2xl font-bold text-gray-900 lg:text-3xl">Business</h3>
+          <p class="mt-2 text-lg text-gray-700">$449/month</p>
+          <a
+            class="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-accent px-5 py-3 text-lg font-medium leading-tight transition-colors duration-200 ease-in-out hover:bg-accent-dark"
+          >
+            Let's talk
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              class="h-4 w-4 text-gray-800"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </a>
+
+          <div class="ml-3 mt-10">
+            <ul class="list-inside list-disc space-y-3 text-lg text-gray-700 lg:list-outside">
+              <li>20 Blog Articles</li>
+              <li>Keyword research</li>
+              <li>1000+ words</li>
+              <li>SEO friendly</li>
+              <li>Content Marketing</li>
+              <li>Traffic Assurance</li>
+              <li>24*7 Chat Support</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:max-w-xs">
+          <h3 class="font-heading text-2xl font-bold text-gray-900 lg:text-3xl">Custom</h3>
+          <p class="mt-2 text-lg text-gray-700">Get a quote</p>
+          <a
+            class="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-accent px-5 py-3 text-lg font-medium leading-tight transition-colors duration-200 ease-in-out hover:bg-accent-dark"
+          >
+            Let's talk
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              class="h-4 w-4 text-gray-800"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </a>
+
+          <div class="ml-3 mt-10">
+            <ul class="list-inside list-disc space-y-3 text-lg text-gray-700 lg:list-outside">
+              <li>For all your custom needs</li>
+              <li>Social Media Content (starting form $200)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-20 bg-neutral-800 px-6 py-20">
+      <div class="lg:mx-auto lg:max-w-6xl">
+        <h2 class="font-heading text-3xl font-bold leading-tight text-white lg:text-[2.6rem]">
+          Some Numbers of Excellence
+        </h2>
+
+        <div class="mt-16 flex flex-col gap-10 lg:flex-row lg:justify-between">
+          <div>
+            <span class="font-heading text-3xl font-bold text-red-400 lg:text-[2.6rem]">50+</span>
+            <p class="mt-2 text-lg text-gray-300">Happy clients</p>
+          </div>
+
+          <div>
+            <span class="font-heading text-3xl font-bold text-orange-400 lg:text-[2.6rem]">
+              100+
+            </span>
+            <p class="mt-2 text-lg text-gray-300">Projects delivered</p>
+          </div>
+
+          <div>
+            <span class="font-heading text-3xl font-bold text-red-400 lg:text-[2.6rem]">20+</span>
+            <p class="mt-2 text-lg text-gray-300">Experts</p>
+          </div>
+
+          <div>
+            <span class="font-heading text-3xl font-bold text-orange-400 lg:text-[2.6rem]">3+</span>
+            <p class="mt-2 text-lg text-gray-300">Years of experience</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-6 py-28 text-center">
+      <img class="mx-auto md:max-w-md" src="/rocket.svg" alt="" />
+
+      <div>
+        <h3
+          class="mt-4 font-heading text-4xl font-bold leading-tight text-gray-900 lg:text-[2.6rem]"
+        >
+          Need to grow your socials?
+        </h3>
+        <p class="mt-2 text-lg text-gray-700">
+          Fuel your brand and drive results with industry-leading content creation team.
+        </p>
+        <a
+          class="mt-8 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-accent px-5 py-3 text-lg font-medium leading-tight transition-colors duration-200 ease-in-out hover:bg-accent-dark"
+        >
+          Let's talk
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="h-4 w-4 text-gray-800"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <script src="/main.js"></script>
   </body>
 </html>
